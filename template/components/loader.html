@@ -1,0 +1,62 @@
+{{ define "template/components/loader.html"}}
+<style>
+    .custom-loader-wrapper {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #EEEEEE;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity 0.25s, visibility 1s;
+    }
+    .fade {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .custom-loader {
+        display: inline-block;
+        position: relative;
+        width:60px;
+        height:60px;
+        color: #8794B8;
+        --c:linear-gradient(currentColor 0 0);
+        background:
+                var(--c),
+                var(--c),
+                var(--c),
+                var(--c);
+        background-repeat: no-repeat;
+        animation:
+                l9-1 1.5s infinite,
+                l9-2 1.5s infinite;
+    }
+    @keyframes l9-1 {
+        0%   {background-size: 0    4px,4px 0   }
+        25%  {background-size: 40px 4px,4px 0   }
+        45%,
+        55%  {background-size: 40px 4px,4px 42px}
+        75%  {background-size: 0    4px,4px 42px}
+        100% {background-size: 0    4px,4px 0   }
+    }
+    @keyframes l9-2 {
+        0%,49.9% {background-position: 0  38px               ,18px 18px,100% 18px,right 18px bottom 18px}
+        50%,100% {background-position: right 20px bottom 18px,18px 100%,20px 18px,right 18px top 0      }
+    }
+</style>
+
+<div class="custom-loader-wrapper">
+    <div class="custom-loader"></div>
+</div>
+
+<script>
+    const fadeOut = () => {
+        const loaderWrapper = document.querySelector('.custom-loader-wrapper');
+        loaderWrapper.classList.add('fade');
+    }
+    window.addEventListener('load', fadeOut);
+</script>
+{{ end }}

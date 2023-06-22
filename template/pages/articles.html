@@ -1,0 +1,20 @@
+{{ define "template/pages/articles.html" }}
+{{ template "template/components/head.html" }}
+{{ template "template/components/nav.html" }}
+
+<main>
+  <body class="grey lighten-3">
+    <div class="section no-pad-bot">
+
+      {{ if .articles }}
+
+      {{ else }}
+
+      <h1 class="center" id="text-gradient">Nothing yet.</h1>
+
+      {{ end }}
+    </div>
+</main>
+
+{{ template "template/components/footer.html"}}
+{{ end }}

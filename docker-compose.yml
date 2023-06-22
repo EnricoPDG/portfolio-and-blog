@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  portfolio-and-blog:
+    image: portfolio-and-blog
+    container_name: portfolio-server
+    hostname: portfolio-server
+    ports:
+      - 9999:9999
+    deploy:
+      restart_policy:
+        condition: on-failure
+
+

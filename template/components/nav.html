@@ -1,0 +1,27 @@
+{{ define "template/components/nav.html" }}
+
+<header>
+  <div class="navbar-fixed">
+    <nav class="grey lighten-3 z-depth-0" style="backdrop-filter: blur(25px)">
+      <div class="nav-wrapper container grey-dif-text">
+        <a href="/" class="brand-logo grey-text">Rico</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger black-text"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/articles" class="black-text">Articles</a></li>
+          <li><a href="/carrer" class="black-text">Carrer</a></li>
+          <li><a href="/skills" class="black-text">Skills</a></li>
+          <li><a href="/about" class="black-text">About</a></li>
+        </ul>
+      </div>
+    <div class="divider"></div>
+    </nav>
+  </div>
+
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="/articles" class="black-text"> Articles</a></li>
+    <li><a href="/carrer" class="black-text">Carrer</a></li>
+    <li><a href="/skills" class="black-text">Skills</a></li>
+    <li><a href="/about" class="black-text">About</a></li>
+  </ul>
+</header>
+{{ end }}
